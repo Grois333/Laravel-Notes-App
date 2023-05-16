@@ -7,20 +7,26 @@
 #### Frontend: Vue.js, Tailwind CSS
 #### Backend: Laravel Jetstream with Inertia
 
-Important concepts to keep in mind:
+
+### Important concepts to keep in mind:
 
 Model == Table (or Entity) in a database
+
 Controller == to a File that is in charge of coordinating the different requests of the user.
+
 Factories == a fake data structure that we are going to test the app with.
+
 Migration == structure of a table that we are going to have inside Laravel, and then we create a table (or entity) in the database.
+
 In order to use the Laravel new command you have to have the Laravel CLI installed on the computer. If this is not your case, and you install everything through the Linux or WSL console, use the standard installation with Composer.
 
-```composer create-project --prefer-dist laravel/laravel laravel-8 && cd laravel-8
-Then we install Jetstream```
+Create Project
+```composer create-project --prefer-dist laravel/laravel laravel-8 && cd laravel-8```
 
+Then we install Jetstream
 ```composer requires laravel/jetstream```
-And at the end, we use the artisan commands to download inertia.js
 
+And at the end, we use the artisan commands to download inertia.js
 ```php artisan jetstream:install inertia```
 
 Models:
@@ -43,16 +49,18 @@ Run the development server
 For those who are using XAMPP which uses MariaDB, they will get an error
 
 ```SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))```
+
 This is easy to solve, you need to locate the file app/Providers/AppServiceProvider.php, then include the namespace in it
 
 ```use Illuminate\Support\Facades\Schema;```
+
 and in the boot() function you need to add the following:
 
-```public function boot()
-     {
-         //
-         Schema::defaultStringLength(191);
-     }```
+```public function boot()```
+    ```{```
+         ```Schema::defaultStringLength(191);```
+     ```}```
+
 With this you can run the migration command again with php artisan migrate:fresh to delete all the tables and migrate them again and it should solve the problem.
 
 
