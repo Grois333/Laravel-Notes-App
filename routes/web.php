@@ -13,10 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return Inertia\Inertia::render('Dashboard');
+// })->name('dashboard');
+
+//Route::view('/', 'index');
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('dashboard');
+Route::get('dashboard', [App\Http\Controllers\PageController::class, 'dashboard'])
+    ->middleware('auth:sanctum')
+    ->name('dashboard');
+
+Route::resource('notes', App\Http\Controllers\NoteController::class)
+    ->middleware('auth:sanctum');

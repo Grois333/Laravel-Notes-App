@@ -6,10 +6,17 @@
             </div>
 
             <div class="mt-8 text-2xl">
-                Welcome to your Jetstream application!
+                Welcome to your Notes application!
             </div>
 
             <div class="mt-6 text-gray-500">
+                Our app is designed to help you manage your notes conveniently and securely. You can create, view, edit, and delete your notes, all while ensuring your data remains confidential.<br><br>
+
+                Rest assured that your notes are treated with the utmost privacy. We respect your trust and want you to know that we do not access, utilize, or share your note content in any way. Your information is entirely private and exclusive to you.<br><br>
+
+                Thank you for choosing our app to organize your thoughts and ideas. We hope it enhances your productivity and keeps your valuable notes safe.<br><br>
+
+                Powered by Laravel with Jetstream, Vue.js, and Tailwind CSS, we bring you a powerful and intuitive platform.<br><br>
                 Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
                 to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
                 you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel

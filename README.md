@@ -1,3 +1,67 @@
+
+# Laravel Notes App
+
+## Description: CRUD App for notes
+
+#### Developed with:
+#### Frontend: Vue.js, Tailwind CSS
+#### Backend: Laravel Jetstream with Inertia
+
+Important concepts to keep in mind:
+
+Model == Table (or Entity) in a database
+Controller == to a File that is in charge of coordinating the different requests of the user.
+Factories == a fake data structure that we are going to test the app with.
+Migration == structure of a table that we are going to have inside Laravel, and then we create a table (or entity) in the database.
+In order to use the Laravel new command you have to have the Laravel CLI installed on the computer. If this is not your case, and you install everything through the Linux or WSL console, use the standard installation with Composer.
+
+```composer create-project --prefer-dist laravel/laravel laravel-8 && cd laravel-8
+Then we install Jetstream```
+
+```composer requires laravel/jetstream```
+And at the end, we use the artisan commands to download inertia.js
+
+```php artisan jetstream:install inertia```
+
+Models:
+```php artisan make:model Note --help```
+```php artisan make:model Note -rfm```
+
+To finish we run the npm commands and we migrate to the database that we have created for the project and specified in the .env file
+
+Generate Laravel Mix scaffolding
+```npm install && npm run dev``` or ```npm run watch```
+
+After creating the configuration for the Migrations, Seeders and Factories
+```php artisan migrate --seed``` or
+```php artisan migrate```
+
+Run the development server
+```php artisan serve```
+
+<h3>To fix the migrate problem</h3>
+For those who are using XAMPP which uses MariaDB, they will get an error
+
+```SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`))```
+This is easy to solve, you need to locate the file app/Providers/AppServiceProvider.php, then include the namespace in it
+
+```use Illuminate\Support\Facades\Schema;```
+and in the boot() function you need to add the following:
+
+```public function boot()
+     {
+         //
+         Schema::defaultStringLength(191);
+     }```
+With this you can run the migration command again with php artisan migrate:fresh to delete all the tables and migrate them again and it should solve the problem.
+
+
+Controllers:
+```php artisan make:controller NoteController --resource``` ( create controller with methods: create, show, edit, update, destroy )
+```php artisan make:controller PageController```
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
