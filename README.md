@@ -12,17 +12,17 @@
 
 ### Register:
 
-![Register]()
+![Register](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/register.png)
 
 
 ### Login:
 
-![Login]()
+![Login](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/login.png)
 
 
 ### Dashboard:
 
-![Dashboard]()
+![Dashboard](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/dashboard.png)
 
 
 ### Notes:
@@ -32,27 +32,27 @@
 
 ### Create Note:
 
-![Create Note]()
+![Create Note](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/notes.png)
 
 
 ### View Note:
 
-![View Note]()
+![View Note](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/virew%20notes.png)
 
 
 ### Edit or Delete Note:
 
-![Edit or Delete Note]()
+![Edit or Delete Note](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/edit%20note.png)
 
 
 ### Search Note:
 
-![Search Note]()
+![Search Note](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/search.png)
 
 
 ### Profile:
 
-![Profile]()
+![Profile](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/profile.png)
 
 
 ### Important concepts to keep in mind:
