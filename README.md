@@ -27,12 +27,12 @@
 
 ### Notes:
 
-![Notes]()
+![Notes](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/notes.png)
 
 
 ### Create Note:
 
-![Create Note](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/notes.png)
+![Create Note](https://raw.githubusercontent.com/Grois333/Laravel-Notes-App/master/images/create%20note.png)
 
 
 ### View Note:
