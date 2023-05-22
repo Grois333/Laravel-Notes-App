@@ -2816,6 +2816,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -46206,7 +46216,71 @@ var render = function() {
           _vm._v("\n            Welcome to your Notes application!\n        ")
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _c(
+          "div",
+          { staticClass: "mt-6 text-gray-500" },
+          [
+            _vm._v(
+              "\n            Our app is designed to help you manage your notes conveniently and securely. You can create, view, edit, and delete your notes, all while ensuring your data remains confidential."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "\n\n            Rest assured that your notes are treated with the utmost privacy. We respect your trust and want you to know that we do not access, utilize, or share your note content in any way. Your information is entirely private and exclusive to you."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "\n\n            Thank you for choosing our app to organize your thoughts and ideas. We hope it enhances your productivity and keeps your valuable notes safe."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "\n\n            Powered by Laravel with Jetstream, Vue.js, and Tailwind CSS, we bring you a powerful and intuitive platform."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "\n            Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed\n            to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe\n            you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel\n            ecosystem to be a breath of fresh air. We hope you love it."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("inertia-link", { attrs: { href: _vm.route("notes.index") } }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "mt-3 flex items-center font-semibold text-indigo-700"
+                },
+                [
+                  _c("div", [_vm._v(" Go to my notes")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ml-1 text-indigo-500" }, [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "w-4 h-4",
+                        attrs: { viewBox: "0 0 20 20", fill: "currentColor" }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            "fill-rule": "evenodd",
+                            d:
+                              "M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z",
+                            "clip-rule": "evenodd"
+                          }
+                        })
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ],
+          1
+        )
       ]
     ),
     _vm._v(" "),
@@ -46241,7 +46315,7 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _vm._m(1)
+            _vm._m(0)
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "ml-12" }, [
@@ -46320,7 +46394,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(1)
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "ml-12" }, [
@@ -46391,10 +46465,10 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _vm._m(3)
+            _vm._m(2)
           ]),
           _vm._v(" "),
-          _vm._m(4)
+          _vm._m(3)
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "p-6 border-t border-gray-200 md:border-l" }, [
@@ -46432,43 +46506,13 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(4)
         ])
       ]
     )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-6 text-gray-500" }, [
-      _vm._v(
-        "\n            Our app is designed to help you manage your notes conveniently and securely. You can create, view, edit, and delete your notes, all while ensuring your data remains confidential."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "\n\n            Rest assured that your notes are treated with the utmost privacy. We respect your trust and want you to know that we do not access, utilize, or share your note content in any way. Your information is entirely private and exclusive to you."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "\n\n            Thank you for choosing our app to organize your thoughts and ideas. We hope it enhances your productivity and keeps your valuable notes safe."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "\n\n            Powered by Laravel with Jetstream, Vue.js, and Tailwind CSS, we bring you a powerful and intuitive platform."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "\n            Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed\n            to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe\n            you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel\n            ecosystem to be a breath of fresh air. We hope you love it.\n        "
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

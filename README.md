@@ -10,6 +10,51 @@
 #### Backend: Laravel Jetstream with Inertia
 
 
+### Register:
+
+![Register]()
+
+
+### Login:
+
+![Login]()
+
+
+### Dashboard:
+
+![Dashboard]()
+
+
+### Notes:
+
+![Notes]()
+
+
+### Create Note:
+
+![Create Note]()
+
+
+### View Note:
+
+![View Note]()
+
+
+### Edit or Delete Note:
+
+![Edit or Delete Note]()
+
+
+### Search Note:
+
+![Search Note]()
+
+
+### Profile:
+
+![Profile]()
+
+
 ### Important concepts to keep in mind:
 
 Model == Table (or Entity) in a database
