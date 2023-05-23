@@ -1,6 +1,10 @@
 <?php
 
+
 namespace App\Providers;
+
+// add this to the top of the file
+use Illuminate\Support\Facades\URL;
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Session;
@@ -28,5 +32,9 @@ class AppServiceProvider extends ServiceProvider
         Inertia::share('flash', function () {
             return ['status' => Session::get('status')];
         });
+
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        };
     }
 }
