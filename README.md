@@ -3,7 +3,7 @@
 
 ## Description: CRUD App for notes
 
-### Link to App: http://laravelnotesapp.infinityfreeapp.com/
+### Link to App: https://laravel-notes-app-production.up.railway.app/
 
 #### Developed with:
 #### Frontend: Vue.js, Tailwind CSS
@@ -114,6 +114,9 @@ With this you can run the migration command again with php artisan migrate:fresh
 Controllers:
 ```php artisan make:controller NoteController --resource``` ( create controller with methods: create, show, edit, update, destroy )
 ```php artisan make:controller PageController```
+
+Running Commands for Deployment on env variables on production:
+```NIXPACKS_BUILD_CMD=composer install && php artisan optimize && php artisan config:cache && php artisan view:cache && php artisan migrate --force```
 
 
 
