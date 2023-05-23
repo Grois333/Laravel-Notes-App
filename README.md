@@ -3,7 +3,7 @@
 
 ## Description: CRUD App for notes
 
-### Link to App: https://my-notes-app33.000webhostapp.com/
+### Link to App: http://laravelnotesapp.infinityfreeapp.com/
 
 #### Developed with:
 #### Frontend: Vue.js, Tailwind CSS
