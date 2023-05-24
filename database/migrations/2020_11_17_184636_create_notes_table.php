@@ -16,10 +16,16 @@ class CreateNotesTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
 
+            // Add user_id field
+            $table->unsignedBigInteger('user_id');
+
             $table->string('excerpt');
             $table->text('content');
 
             $table->timestamps();
+
+             // Add foreign key constraint
+             $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

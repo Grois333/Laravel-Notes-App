@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
@@ -15,15 +16,26 @@ class NoteController extends Controller
      */
     public function index(Request $request)
     {
+        $userId = Auth::id();
+
         return Inertia::render('Notes/Index', [
-
-            //'notes' => Note::latest()->get()
-
             'notes' => Note::latest()
+                ->where('user_id', $userId)
                 ->where('excerpt', 'LIKE', "%$request->q%")
                 ->get()
         ]);
     }
+    // public function index(Request $request)
+    // {
+    //     return Inertia::render('Notes/Index', [
+
+    //         //'notes' => Note::latest()->get()
+
+    //         'notes' => Note::latest()
+    //             ->where('excerpt', 'LIKE', "%$request->q%")
+    //             ->get()
+    //     ]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -48,10 +60,23 @@ class NoteController extends Controller
             'content' => 'required',
         ]);
 
-        $note = Note::create($request->all());
+        $note = new Note($request->all());
+        $note->user_id = Auth::id();
+        $note->save();
 
         return redirect()->route('notes.edit', $note->id)->with('status', 'Note created');
     }
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'excerpt' => 'required',
+    //         'content' => 'required',
+    //     ]);
+
+    //     $note = Note::create($request->all());
+
+    //     return redirect()->route('notes.edit', $note->id)->with('status', 'Note created');
+    // }
 
     /**
      * Display the specified resource.
@@ -93,6 +118,17 @@ class NoteController extends Controller
 
         return redirect()->route('notes.index')->with('status', 'Note updated');
     }
+    // public function update(Request $request, Note $note)
+    // {
+    //     $request->validate([
+    //         'excerpt' => 'required',
+    //         'content' => 'required',
+    //     ]);
+
+    //     $note->update($request->all());
+
+    //     return redirect()->route('notes.index')->with('status', 'Note updated');
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -106,4 +142,10 @@ class NoteController extends Controller
 
         return redirect()->route('notes.index')->with('status', 'Note deleted');
     }
+    // public function destroy(Note $note)
+    // {
+    //     $note->delete();
+
+    //     return redirect()->route('notes.index')->with('status', 'Note deleted');
+    // }
 }
