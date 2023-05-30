@@ -24,6 +24,8 @@
                                 <textarea 
                                     class="form-input w-full rounded-md shadow-sm"
                                     v-model="form.excerpt"
+                                    :maxlength="100"
+                                    placeholder="Enter up to 100 characters"
                                 ></textarea>
                                 <label class="block font-medium text-sm text-gray-700">
                                     Content
@@ -32,10 +34,23 @@
                                     class="form-input w-full rounded-md shadow-sm"
                                     v-model="form.content"
                                     rows="8"
+                                    :maxlength="200"
+                                    placeholder="Enter up to 200 characters"
                                 ></textarea>
-                                <button 
+                                <!-- <button 
                                     class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150"
-                                >Create</button>
+                                >Create</button> -->
+                                <button
+                                    class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150"
+                                    :disabled="isSubmitting"
+                                >
+                                    <template v-if="isSubmitting">
+                                        Creating...
+                                    </template>
+                                    <template v-else>
+                                        Create
+                                    </template>
+                                </button>
                             </form>
                             <hr class="my-6">
                             <inertia-link :href="route('notes.index')">
@@ -61,13 +76,32 @@
                 form: {
                     excerpt: '',
                     content: '',
-                }
+                },
+                isSubmitting: false,
             }
         },
         methods: {
+            // submit() {
+            //     this.$inertia.post(this.route('notes.store'), this.form)
+            // }
             submit() {
+
+                if (this.isSubmitting) {
+                    return;
+                }
+
+                this.isSubmitting = true;
                 this.$inertia.post(this.route('notes.store'), this.form)
-            }
+                .then(() => {
+                // Handle success if needed
+                })
+                .catch(() => {
+                // Handle error if needed
+                })
+                .finally(() => {
+                    this.isSubmitting = false;
+                });
+            },
         }
     }
 </script>

@@ -3538,6 +3538,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3548,12 +3563,27 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         excerpt: '',
         content: ''
-      }
+      },
+      isSubmitting: false
     };
   },
   methods: {
+    // submit() {
+    //     this.$inertia.post(this.route('notes.store'), this.form)
+    // }
     submit: function submit() {
-      this.$inertia.post(this.route('notes.store'), this.form);
+      var _this = this;
+
+      if (this.isSubmitting) {
+        return;
+      }
+
+      this.isSubmitting = true;
+      this.$inertia.post(this.route('notes.store'), this.form).then(function () {// Handle success if needed
+      })["catch"](function () {// Handle error if needed
+      })["finally"](function () {
+        _this.isSubmitting = false;
+      });
     }
   }
 });
@@ -3633,6 +3663,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3646,16 +3707,44 @@ __webpack_require__.r(__webpack_exports__);
       form: {
         excerpt: this.note.excerpt,
         content: this.note.content
-      }
+      },
+      isSubmitting: false,
+      isDeleting: false
     };
   },
   methods: {
+    // submit() {
+    //     this.$inertia.put(this.route('notes.update', this.note.id), this.form)
+    // },
     submit: function submit() {
-      this.$inertia.put(this.route('notes.update', this.note.id), this.form);
+      var _this = this;
+
+      if (this.isSubmitting) {
+        return;
+      }
+
+      this.isSubmitting = true;
+      this.$inertia.put(this.route('notes.update', this.note.id), this.form).then(function () {// Handle success if needed
+      })["catch"](function () {// Handle error if needed
+      })["finally"](function () {
+        _this.isSubmitting = false;
+      });
     },
     destroy: function destroy() {
+      var _this2 = this;
+
+      if (this.isDeleting) {
+        return;
+      }
+
+      this.isDeleting = true;
+
       if (confirm('¿Want to delete?')) {
-        this.$inertia["delete"](this.route('notes.destroy', this.note.id));
+        this.$inertia["delete"](this.route('notes.destroy', this.note.id)).then(function () {// Handle success if needed
+        })["catch"](function () {// Handle error if needed
+        })["finally"](function () {
+          _this2.isDeleting = false;
+        });
       }
     }
   }
@@ -48190,6 +48279,10 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-input w-full rounded-md shadow-sm",
+                        attrs: {
+                          maxlength: 100,
+                          placeholder: "Enter up to 100 characters"
+                        },
                         domProps: { value: _vm.form.excerpt },
                         on: {
                           input: function($event) {
@@ -48223,7 +48316,11 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-input w-full rounded-md shadow-sm",
-                        attrs: { rows: "8" },
+                        attrs: {
+                          rows: "8",
+                          maxlength: 200,
+                          placeholder: "Enter up to 200 characters"
+                        },
                         domProps: { value: _vm.form.content },
                         on: {
                           input: function($event) {
@@ -48239,9 +48336,23 @@ var render = function() {
                         "button",
                         {
                           staticClass:
-                            "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150"
+                            "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
+                          attrs: { disabled: _vm.isSubmitting }
                         },
-                        [_vm._v("Create")]
+                        [
+                          _vm.isSubmitting
+                            ? [
+                                _vm._v(
+                                  "\n                                    Creating...\n                                "
+                                )
+                              ]
+                            : [
+                                _vm._v(
+                                  "\n                                    Create\n                                "
+                                )
+                              ]
+                        ],
+                        2
                       )
                     ]
                   ),
@@ -48368,6 +48479,10 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-input w-full rounded-md shadow-sm",
+                        attrs: {
+                          maxlength: 100,
+                          placeholder: "Enter up to 100 characters"
+                        },
                         domProps: { value: _vm.form.excerpt },
                         on: {
                           input: function($event) {
@@ -48401,7 +48516,11 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-input w-full rounded-md shadow-sm",
-                        attrs: { rows: "8" },
+                        attrs: {
+                          rows: "8",
+                          maxlength: 200,
+                          placeholder: "Enter up to 200 characters"
+                        },
                         domProps: { value: _vm.form.content },
                         on: {
                           input: function($event) {
@@ -48417,17 +48536,42 @@ var render = function() {
                         "button",
                         {
                           staticClass:
-                            "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md bg-gray-800"
+                            "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md bg-gray-800",
+                          attrs: {
+                            disabled: _vm.isSubmitting || _vm.isDeleting
+                          }
                         },
-                        [_vm._v("Edit")]
+                        [
+                          _vm.isSubmitting
+                            ? [
+                                _vm._v(
+                                  "\n                                    Editing...\n                                "
+                                )
+                              ]
+                            : _vm.isDeleting
+                            ? [
+                                _vm._v(
+                                  "\n                                    Deleting...\n                                "
+                                )
+                              ]
+                            : [
+                                _vm._v(
+                                  "\n                                    Edit\n                                "
+                                )
+                              ]
+                        ],
+                        2
                       ),
                       _vm._v(" "),
                       _c(
-                        "a",
+                        "button",
                         {
                           staticClass:
                             "inline-flex items-center justify-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-600 transition ease-in-out duration-150",
-                          attrs: { href: "#" },
+                          attrs: {
+                            type: "button",
+                            disabled: _vm.isSubmitting || _vm.isDeleting
+                          },
                           on: {
                             click: function($event) {
                               $event.preventDefault()
@@ -48436,10 +48580,25 @@ var render = function() {
                           }
                         },
                         [
-                          _vm._v(
-                            "\n                                Delete Note\n                            "
-                          )
-                        ]
+                          _vm.isSubmitting
+                            ? [
+                                _vm._v(
+                                  "\n                                    Editing...\n                                "
+                                )
+                              ]
+                            : _vm.isDeleting
+                            ? [
+                                _vm._v(
+                                  "\n                                    Deleting...\n                                "
+                                )
+                              ]
+                            : [
+                                _vm._v(
+                                  "\n                                    Delete Note\n                                "
+                                )
+                              ]
+                        ],
+                        2
                       )
                     ]
                   ),

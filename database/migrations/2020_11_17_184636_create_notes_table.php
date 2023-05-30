@@ -25,7 +25,10 @@ class CreateNotesTable extends Migration
             $table->timestamps();
 
              // Add foreign key constraint
-             $table->foreign('user_id')->references('id')->on('users');
+             //$table->foreign('user_id')->references('id')->on('users');
+
+            // Add foreign key constraint with cascade delete
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
