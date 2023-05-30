@@ -48688,106 +48688,117 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "md:col-span-2 mt-5 md:mt-0" }, [
-              _c("div", { staticClass: "shadow bg-white md:rounded-md p-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "flex justify-between" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.q,
-                          expression: "q"
-                        }
-                      ],
-                      staticClass: "form-input rounded-md shadow-sm",
-                      attrs: { type: "text", placeholder: "Search..." },
-                      domProps: { value: _vm.q },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "shadow bg-white md:rounded-md p-4 overflow-x-auto"
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "flex justify-between" },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.q,
+                            expression: "q"
                           }
-                          _vm.q = $event.target.value
+                        ],
+                        staticClass: "form-input rounded-md shadow-sm",
+                        attrs: { type: "text", placeholder: "Search..." },
+                        domProps: { value: _vm.q },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.q = $event.target.value
+                          }
                         }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "inertia-link",
-                      {
-                        staticClass:
-                          "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
-                        attrs: { href: _vm.route("notes.create") }
-                      },
-                      [
-                        _vm._v(
-                          "\n                                Create\n                            "
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("hr", { staticClass: "my-6" }),
-                _vm._v(" "),
-                _c(
-                  "table",
-                  _vm._l(_vm.notes, function(note) {
-                    return _c("tr", { key: note.id }, [
-                      _c("td", { staticClass: "border px-4 py-2" }, [
-                        _vm._v(
-                          "\n                                    " +
-                            _vm._s(note.excerpt) +
-                            "\n                                "
-                        )
-                      ]),
+                      }),
                       _vm._v(" "),
                       _c(
-                        "td",
-                        { staticClass: "px-4 py-2" },
+                        "inertia-link",
+                        {
+                          staticClass:
+                            "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150",
+                          attrs: { href: _vm.route("notes.create") }
+                        },
                         [
-                          _c(
-                            "inertia-link",
-                            {
-                              attrs: { href: _vm.route("notes.show", note.id) }
-                            },
-                            [
-                              _vm._v(
-                                "\n                                        View\n                                    "
-                              )
-                            ]
+                          _vm._v(
+                            "\n                                Create\n                            "
                           )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        { staticClass: "px-4 py-2" },
-                        [
-                          _c(
-                            "inertia-link",
-                            {
-                              attrs: { href: _vm.route("notes.edit", note.id) }
-                            },
-                            [
-                              _vm._v(
-                                "\n                                        Edit\n                                    "
-                              )
-                            ]
-                          )
-                        ],
-                        1
+                        ]
                       )
-                    ])
-                  }),
-                  0
-                )
-              ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("hr", { staticClass: "my-6" }),
+                  _vm._v(" "),
+                  _c(
+                    "table",
+                    _vm._l(_vm.notes, function(note) {
+                      return _c("tr", { key: note.id }, [
+                        _c("td", { staticClass: "border px-4 py-2" }, [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(note.excerpt) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          { staticClass: "px-4 py-2" },
+                          [
+                            _c(
+                              "inertia-link",
+                              {
+                                attrs: {
+                                  href: _vm.route("notes.show", note.id)
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        View\n                                    "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          { staticClass: "px-4 py-2" },
+                          [
+                            _c(
+                              "inertia-link",
+                              {
+                                attrs: {
+                                  href: _vm.route("notes.edit", note.id)
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Edit\n                                    "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
             ])
           ])
         ])

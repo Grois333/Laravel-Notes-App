@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="md:col-span-2 mt-5 md:mt-0">
-                        <div class="shadow bg-white md:rounded-md p-4">
+                        <div class="shadow bg-white md:rounded-md p-4 overflow-x-auto">
                             <div class="flex justify-between">
                                 <input type="text" class="form-input rounded-md shadow-sm" placeholder="Search..." v-model="q">
 
