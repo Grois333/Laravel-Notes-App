@@ -3,7 +3,7 @@
 
 ## Description: CRUD App for notes
 
-### Link to App: https://laravel-notes-app-production.up.railway.app/
+### Link to App: https://my-notes-app333.000webhostapp.com/
 
 #### Developed with:
 #### Frontend: Vue.js, Tailwind CSS
